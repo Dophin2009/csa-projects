@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Searching and Sorting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/style.css">
+    <link rel="icon" href="favicon-16x16.png" type="image/png" sizes="16x16">
+</head>
+
+<body>
+    <div class="grid-wrapper">
+        <div class="canvas-wrap">
+            <canvas id="nsq" width="700" height="400"></canvas>
+            <canvas id="nlogn" width="700" height="400"></canvas>
+            <canvas id="resq" width="700" height="400"></canvas>
+        </div>
+        <script async src="dist/bundle.js"></script>
+
+        <div class="text-wrap">
+            <div class="text-box-wrap">
+                <h2>Timing Sorting Algorithms</h2>
+                <div style="font-size: 13px">
+                    <div>
+                        In the charts to the left, hover over data points to view
+                        their values to the precision of three decimal places. <br>
+                        Hide specific data sets by clicking on the legend.
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-box-wrap">
+                <h3>I. Data</h3>
+                <div>
+                    Based off of the data as rendered in the charts to the left,
+                    one can see that in order from slowest to fastest,
+                    the various sorting algorithms may be sorted as such:
+                </div>
+                <div>
+                    <table>
+                        <tr>
+                            <th>Algorithm</th>
+                            <th colspan="3">Time Complexity</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th>Best</th>
+                            <th>Average</th>
+                            <th>Worst</th>
+                        </tr>
+                        <tr>
+                            <td id="algo-name">Bubble Sort</td>
+                            <td>Ω(n)</td>
+                            <td>Ω(n<sup>2</sup>)</td>
+                            <td>Ω(n<sup>2</sup>)</td>
+                        </tr>
+                        <tr>
+                            <td id="algo-name">Selection Sort</td>
+                            <td>Ω(n<sup>2</sup>)</td>
+                            <td>Ω(n<sup>2</sup>)</td>
+                            <td>Ω(n<sup>2</sup>)</td>
+                        </tr>
+                        <tr>
+                            <td id="algo-name">Insertion Sort</td>
+                            <td>Ω(n)</td>
+                            <td>Ω(n<sup>2</sup>)</td>
+                            <td>Ω(n<sup>2</sup>)</td>
+                        </tr>
+                        <tr>
+                            <td id="algo-name">Heapsort</td>
+                            <td>Ω(n log(n))</td>
+                            <td>Ω(n log(n))</td>
+                            <td>Ω(n log(n))</td>
+                        </tr>
+                        <tr>
+                            <td id="algo-name">Merge Sort</td>
+                            <td>Ω(n log(n))</td>
+                            <td>Ω(n log(n))</td>
+                            <td>Ω(n log(n))</td>
+                        </tr>
+                        <tr>
+                            <td id="algo-name">Quicksort</td>
+                            <td>Ω(n log(n))</td>
+                            <td>Ω(n log(n))</td>
+                            <td>Ω(n<sup>2</sup>)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="text-box-wrap">
+                <h3>II. Research Question</h3>
+                <div>
+                    <b>Question:</b>
+                    For a list in reverse order, is merge sort
+                    or quicksort faster?<br>
+
+                    <b>Hypothesis:</b>
+                    When sorting a list in reverse order,
+                    quicksort will be faster than merge sort.
+                </div>
+                <div>
+                    <b>Conclusion:</b>
+                    After running the tests and plotting the data (in the third chart),
+                    it is very evident, even with small lists, that for lists already
+                    sorted in reverse order, merge sort is much faster than quicksort.
+                    <br>
+                    Even with the manual increase of node's maximum call stack size,
+                    a <code>RangeError</code> was encountered due to the recursion of quicksort for
+                    lists longer than ~7000 elements.
+                    <br>
+                    For all list sizes tested, merge sort maintained a run-time under
+                    1 millisecond, whereas quicksort's run-times increased greatly.
+                    <br>
+                    In conclusion, my hypothesis was incorrect. Contrary to my prediction,
+                    merge sort was much faster than quicksort on lists in revevrse order.
+                </div>
+            </div>
+
+            <div class="text-box-wrap">
+                <h3>III. Source Code</h3>
+                <div>
+                    All code was written in Typescript, compiled into ECMAScript5
+                    and bundled for the web via webpack. <br>
+                    Data was generated separately and written to JSON files, and
+                    retrieved client-side via native XMLHttpRequest.
+                    <br>
+                    Favicon from octicons, converted from svg to png.
+                </div>
+
+                <div>
+                    Direct links to specific files:
+                    <ul>
+                        <li><a href="src/sorting.ts">Algorithm Implementations</a></li>
+                        <li><a href="src/time.ts">Timing Algorithms</a></li>
+                        <li><a href="src/chart.ts">Chart Rendering</a></li>
+                        <li><a href="src/searching.ts">Unused Searching Implentations</a></li>
+                    </ul>
+
+                    Full list of dependencies and dev dependencies may be found
+                    in npm package.json.
+                </div>
+            </div>
+
+            <div class="text-box-wrap">
+                <h3>IV. Dependencies</h3>
+                <ul>
+                    <li>
+                        <a href="https://www.npmjs.com/package/chart.js">chart.js</a>
+                        - rendering of charts
+                    </li>
+                    <li>
+                        <a href="https://www.npmjs.com/package/moment">moment</a>
+                        - timing of algorithms
+                    </li>
+                    <li>
+                        <a href="https://www.npmjs.com/package/webpack">webpack</a>
+                        - building of code and bundling for browser use
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

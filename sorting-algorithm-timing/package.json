@@ -1,0 +1,23 @@
+{
+  "name": "sorting-algorithm-timing",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "webpack -p",
+    "watch": "webpack --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/chart.js": "^2.7.45",
+    "@types/node": "^10.17.27",
+    "chart.js": "^2.7.3",
+    "moment": "^2.24.0",
+    "ts-loader": "^5.3.3",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
+  },
+  "devDependencies": {
+    "typescript": "^3.3.3"
+  }
+}

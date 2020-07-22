@@ -1,0 +1,42 @@
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin: 20px 50px;
+}
+
+.grid-wrapper > div {
+  margin-right: 30px;
+}
+
+.text-wrap > div:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.text-box-wrap {
+  padding: 5px 25px 0px 25px;
+}
+
+.text-box-wrap > div:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  white-space: nowrap;
+  padding: 0px 20px 0px 0px;
+}
+
+#algo-name {
+  text-align: left;
+}
+
+code {
+  background-color: #eeeeee;
+}
