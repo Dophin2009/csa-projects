@@ -1,0 +1,17 @@
+{
+  "name": "text-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "typescript": "^3.3.3333"
+  }
+}

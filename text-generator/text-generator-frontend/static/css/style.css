@@ -1,0 +1,50 @@
+* {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+body {
+    background-color: rgb(243, 243, 243);
+}
+
+.app {
+    align-content: center;
+    height: 100%;
+}
+
+.button {
+    margin-top: 100px;
+    background-color: rgb(221, 221, 221);
+    border: none;
+    padding: 5px 10px;
+}
+
+.button:hover {
+    background-color: rgb(209, 209, 209);
+}
+
+.button:active {
+    background-color: rgb(209, 209, 209);
+    box-shadow: 0 1px #666;
+    transform: translateY(2px);
+}
+
+.text {
+    text-align: center;
+}
+
+.slider-container > * {
+    margin-top: 20px;
+    vertical-align: 10px;
+}
+
+#present {
+    width: 700px;
+    height: 400px;
+
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+#present::-webkit-scrollbar {
+    display: none;
+}
